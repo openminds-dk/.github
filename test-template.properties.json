@@ -1,0 +1,8 @@
+{
+    "name": "test-template workflow ",
+    "description": "lorem ipsum",
+    "iconName": "example-icon",
+    "categories": [
+        "maven"
+    ]
+}
