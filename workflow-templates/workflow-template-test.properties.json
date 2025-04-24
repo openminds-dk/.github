@@ -1,7 +1,7 @@
 {
     "name": "test-template workflow ",
     "description": "lorem ipsum",
-    "iconName": "Apache_Maven_logo",
+    "iconName": "github-mark",
     "categories": [
         "maven"
     ]
