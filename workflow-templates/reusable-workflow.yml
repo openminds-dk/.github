@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  maven-build-and-test:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'oracle'
+          cache: 'maven'
+
+      - name: Maven build and test
+        run: ./mvnw clean package -s ${{github.workspace}}/.github/settings.xml
+        env:
+          GITHUB_ACTOR: ${{secrets.READ_PACKAGES_ACTOR}}
+          GITHUB_TOKEN: ${{secrets.READ_PACKAGES_TOKEN}}
