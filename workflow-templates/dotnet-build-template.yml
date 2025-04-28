@@ -1,0 +1,17 @@
+name: build-project-workflow
+
+on:
+    push:
+        branches: 
+            - "*"
+jobs:
+    build:
+      uses: openminds-dk/reusable-workflows/.github/workflows/dotnet-build.yml@main
+      with:
+          dotnet_version: 8.0.x
+      secrets:
+            github_username: ${{ secrets.READ_PACKAGES_ACTOR }}
+            github_password: ${{ secrets.READ_PACKAGES_TOKEN }}
+      permissions:
+        contents: read
+        packages: read

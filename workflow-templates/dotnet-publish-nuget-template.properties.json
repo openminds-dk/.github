@@ -1,0 +1,8 @@
+{
+    "name": "dotnet-publish-nuget-template ",
+    "description": "Template for building a project, packing to a nuget and publishing to the openminds GPR",
+    "iconName": "dotnet-svg",
+    "categories": [
+        "dotnet"
+    ]
+}

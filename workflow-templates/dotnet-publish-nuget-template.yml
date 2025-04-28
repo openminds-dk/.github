@@ -1,0 +1,19 @@
+name: .NET publish nuget
+
+on: 
+  release:
+    types: [published]
+
+jobs:
+    deploy-nuget:
+      uses: openminds-dk/reusable-workflows/.github/workflows/dotnet-nuget-publish.yml@main
+      with:
+          dotnet_version: 8.0.x
+          release_version: ${GITHUB_REF_NAME#v}
+      secrets:
+            github_username: ${{ secrets.READ_PACKAGES_ACTOR }}
+            github_password: ${{ secrets.READ_PACKAGES_TOKEN }}
+      permissions:
+        contents: read
+        packages: write
+    

@@ -1,0 +1,8 @@
+{
+    "name": "dotnet-build-template ",
+    "description": "Template for a standard build for dotnet applications",
+    "iconName": "dotnet-svg",
+    "categories": [
+        "dotnet"
+    ]
+}
