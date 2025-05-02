@@ -1,0 +1,8 @@
+{
+    "name": "dotnet-publish-service-template",
+    "description": "Template for dotnet when you want to make a publish that gets attached to your release",
+    "iconName": "icon-dotnet",
+    "categories": [
+        "dotnet"
+    ]
+}

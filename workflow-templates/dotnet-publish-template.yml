@@ -1,0 +1,19 @@
+name: .NET publish service with release
+
+on: 
+  release:
+    types: [published]
+
+jobs:
+    deploy-nuget:
+      uses: openminds-dk/reusable-workflows/.github/workflows/dotnet-publish-for-release.yml@main
+      with:
+          project_to_build: <Insert project name>
+          release_tag: ${GITHUB_REF_NAME}
+          runtime: win-x64
+          upload_url: ${{ github.event.release.upload_url }}
+      secrets:
+            github_username: ${{ secrets.READ_PACKAGES_ACTOR }}
+            github_password: ${{ secrets.READ_PACKAGES_TOKEN }}
+      permissions:
+            contents: write
