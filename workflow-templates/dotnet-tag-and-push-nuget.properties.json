@@ -1,5 +1,5 @@
 {
-    "name": "dotnet-publish-nuget-template ",
+    "name": "dotnet-publish-nuget ",
     "description": "Template for building a project, packing to a nuget and publishing to the openminds GPR",
     "iconName": "icon-dotnet",
     "categories": [

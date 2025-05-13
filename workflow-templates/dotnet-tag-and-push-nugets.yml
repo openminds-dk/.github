@@ -1,0 +1,22 @@
+name: .NET publish nuget
+
+on: 
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/README.md'
+      - '.github/**'
+      - '.gitignore'
+
+jobs:
+    deploy-nuget:
+      uses: openminds-dk/reusable-workflows/.github/workflows/dotnet-tag-and-push-nuget.yml@main
+      with:
+          project_to_build: <insert project name>
+      secrets:
+          github_username: ${{ secrets.READ_PACKAGES_ACTOR }}
+          github_password: ${{ secrets.READ_PACKAGES_TOKEN }}
+      permissions:
+        contents: write
+        packages: write
